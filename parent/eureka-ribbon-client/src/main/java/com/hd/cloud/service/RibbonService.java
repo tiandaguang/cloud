@@ -14,7 +14,7 @@ public class RibbonService {
     RestTemplate restTemplate;
 
     @RequestMapping(value = "/hi", method = RequestMethod.GET)
-    public String sayHiFromClientOne(@RequestParam(value = "name") String name) {
+    public String sayHiFromClientOne(@RequestParam(defaultValue = "tianda") String name) {
         return restTemplate.getForObject("http://eureka-client/hi?name=" + name, String.class);
     }
 }

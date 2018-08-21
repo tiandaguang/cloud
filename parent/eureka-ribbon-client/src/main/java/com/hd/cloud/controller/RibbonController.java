@@ -15,7 +15,8 @@ public class RibbonController {
     RibbonService ribbonService;
 
     @GetMapping(value = "/hi")
-    public String sayHi(@RequestParam String name) {
+    public String sayHi(@RequestParam(required = false, defaultValue = "tianda") String name) {
+        name = name.concat("_from RibbonController  ");
         return ribbonService.sayHiFromClientOne(name);
     }
 }

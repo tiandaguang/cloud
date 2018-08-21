@@ -1,6 +1,6 @@
 my:
   name: tianda
-  age:  28
+  age: 28
   number: ${random.int}
   uuid: ${random.uuid}
   max:  ${random.int(10)}
