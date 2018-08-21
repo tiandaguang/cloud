@@ -1,4 +1,3 @@
-#不要忘记下面的--- 是三个"-"
 ---
 spring:
   profiles: peer1

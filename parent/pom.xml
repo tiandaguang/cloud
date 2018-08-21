@@ -16,10 +16,9 @@
     </parent>
 
     <modules>
-        <module>sever</module>
-        <module>client</module>
+        <module>eureka-client</module>
+        <module>eureka-ribbon-client</module>
         <module>eureka_server</module>
-        <module>sever2</module>
     </modules>
 
     <properties>
