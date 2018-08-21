@@ -21,6 +21,7 @@
         <module>eureka_server</module>
         <module>eureka-monitor-client</module>
         <module>eureka-fegin-client</module>
+        <module>eureka-zuul-client</module>
     </modules>
 
     <properties>

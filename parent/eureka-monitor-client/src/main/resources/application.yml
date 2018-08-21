@@ -14,7 +14,7 @@ spring:
     name: eureka-monitor-client
 
 turbine:
-  app-config: eureka-ribbon-client,service-feign-client
+  app-config: eureka-ribbon-client,eureka-feign-client
   aggregator:
     clusterConfig: default
   clusterNameExpression: new String("default")
