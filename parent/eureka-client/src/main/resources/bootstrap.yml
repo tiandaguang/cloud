@@ -1,5 +1,5 @@
 server:
-  port: 9101
+  port: 9001
 
 spring:
   application:
@@ -19,8 +19,7 @@ management:
             show-details: always
     endpoints:
         web:
-            base-path: /monitor
             exposure:
                 include: '*'
     server:
-        port: 9111
+        port: 9011
