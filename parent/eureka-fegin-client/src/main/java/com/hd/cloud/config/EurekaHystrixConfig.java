@@ -1,4 +1,4 @@
-package com.hd.cloud.service;
+package com.hd.cloud.config;
 
 import com.hd.cloud.client.EurekaFeignClient;
 import org.springframework.stereotype.Component;

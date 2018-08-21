@@ -10,12 +10,13 @@ import java.util.concurrent.TimeUnit;
  * Created by Administrator on 2018/8/21.
  */
 @Configuration
-public class EurekaFeignConfig {
+public class EurekaFeignRetryerConfig {
 
     /**
      * 重试机制
-     *
+     * <p>
      * 重试间隔 100毫秒  最大重试间隔 1秒  重试次数
+     *
      * @return
      */
     @Bean

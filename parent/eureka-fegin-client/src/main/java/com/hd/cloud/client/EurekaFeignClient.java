@@ -1,7 +1,7 @@
 package com.hd.cloud.client;
 
-import com.hd.cloud.config.EurekaFeignConfig;
-import com.hd.cloud.service.EurekaHystrixConfig;
+import com.hd.cloud.config.EurekaFeignRetryerConfig;
+import com.hd.cloud.config.EurekaHystrixConfig;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  *
  * Feign客户端
  */
-@FeignClient(value = "eureka-client", configuration = EurekaFeignConfig.class, fallback = EurekaHystrixConfig.class)
+@FeignClient(value = "eureka-client", configuration = EurekaFeignRetryerConfig.class, fallback = EurekaHystrixConfig.class)
 public interface EurekaFeignClient {
 
     @GetMapping(value = "hi")
