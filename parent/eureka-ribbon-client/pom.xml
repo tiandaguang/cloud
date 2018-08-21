@@ -18,5 +18,11 @@
     </parent>
 
     <dependencies>
+        <!-- @hystrixcommand注解 -->
+        <dependency>
+            <groupId>com.netflix.hystrix</groupId>
+            <artifactId>hystrix-javanica</artifactId>
+            <version>RELEASE</version>
+        </dependency>
     </dependencies>
 </project>
