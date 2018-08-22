@@ -21,12 +21,13 @@ public class MyFallbackProvider implements FallbackProvider {
 
     /**
      * 对所有服务熔断  getRoute 返回 "*"
+     * eureka-ribbon-client 服务名称
      *
      * @return
      */
     @Override
     public String getRoute() {
-        return "eureka-ribbon-client";
+        return "*";
     }
 
     @Override

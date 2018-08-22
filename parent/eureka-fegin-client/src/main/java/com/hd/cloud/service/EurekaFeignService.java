@@ -13,6 +13,8 @@ public class EurekaFeignService {
     EurekaFeignClient eurekaFeignClient;
 
     public String hi(String name) {
+
+//        System.out.println(1/0);
         return eurekaFeignClient.hi(name);
     }
 
