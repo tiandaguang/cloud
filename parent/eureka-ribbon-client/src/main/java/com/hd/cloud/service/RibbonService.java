@@ -14,6 +14,7 @@ public class RibbonService {
 
     @HystrixCommand(fallbackMethod = "hiError")
     public String sayHiFromClientOne(@RequestParam(defaultValue = "tianda") String name) {
+        System.out.println(1 / 0);
         return restTemplate.getForObject("http://eureka-client/hi?name=" + name, String.class);
     }
 

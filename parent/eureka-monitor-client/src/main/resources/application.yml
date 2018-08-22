@@ -12,7 +12,8 @@ server:
 spring:
   application:
     name: eureka-monitor-client
-
+  zipkin:
+    base-url: http://localhost:9411
 turbine:
   app-config: eureka-ribbon-client,eureka-feign-client
   aggregator:

@@ -19,6 +19,10 @@ spring:
             enabled: true
             trace:
                 enabled: true
+
+#服务追踪
+    zipkin:
+      base-url: http://localhost:9411
 #运行状态监控
 management:
     endpoints:

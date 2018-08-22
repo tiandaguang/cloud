@@ -14,14 +14,14 @@ import java.io.InputStream;
 /**
  * Zuul 熔断处理
  * getRoute 返回对于哪个服务进行熔断
- *  Zuul 目前只支持服务级别的熔断，不支持具体到某个URL进行熔断。
- *
+ * Zuul 目前只支持服务级别的熔断，不支持具体到某个URL进行熔断。
  */
 @Component
 public class MyFallbackProvider implements FallbackProvider {
 
     /**
      * 对所有服务熔断  getRoute 返回 "*"
+     *
      * @return
      */
     @Override

@@ -1,5 +1,6 @@
 package com.hd.cloud;
 
+import brave.sampler.Sampler;
 import com.hd.cloud.service.TokenFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,6 +12,11 @@ import org.springframework.context.annotation.Bean;
 @EnableEurekaClient
 @EnableZuulProxy
 public class EurekaZuulClientApplication {
+    @Bean
+    public Sampler defaultSampler() {
+        return Sampler.ALWAYS_SAMPLE;
+    }
+
     @Bean
     public TokenFilter tokenFilter() {
         return new TokenFilter();

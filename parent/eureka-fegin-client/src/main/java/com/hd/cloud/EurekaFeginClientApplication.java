@@ -1,5 +1,6 @@
 package com.hd.cloud;
 
+import brave.sampler.Sampler;
 import com.netflix.hystrix.contrib.metrics.eventstream.HystrixMetricsStreamServlet;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,6 +17,12 @@ import org.springframework.context.annotation.Bean;
 @EnableHystrixDashboard
 @EnableHystrix
 public class EurekaFeginClientApplication {
+
+    @Bean
+    public Sampler defaultSampler() {
+        return Sampler.ALWAYS_SAMPLE;
+    }
+
     @Bean
     public ServletRegistrationBean getServlet() {
         HystrixMetricsStreamServlet streamServlet = new HystrixMetricsStreamServlet();

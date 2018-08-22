@@ -1,3 +1,4 @@
+#服务注册
 eureka:
   client:
     serviceUrl:
@@ -5,3 +6,8 @@ eureka:
   instance:
     lease-renewal-interval-in-seconds: 5
     lease-expiration-duration-in-seconds: 5
+
+#服务追踪
+spring:
+    zipkin:
+      base-url: http://localhost:9411

@@ -1,8 +1,10 @@
 package com.hd.cloud;
 
+import brave.sampler.Sampler;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +15,11 @@ public class EurekaClientApplication {
 
     @Value("${server.port}")
     String port;
+
+    @Bean
+    public Sampler defaultSampler() {
+        return Sampler.ALWAYS_SAMPLE;
+    }
 
     @RequestMapping("/hi")
     public String home(@RequestParam(defaultValue = "forezp") String name) {

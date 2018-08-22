@@ -1,5 +1,8 @@
 server:
   port: 9401
+
+
+#远程配置
 spring:
     application:
         name: config-server
