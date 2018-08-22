@@ -1,0 +1,14 @@
+server:
+  port: 9401
+spring:
+    application:
+        name: config-server
+    cloud:
+        config:
+            label: master
+            server:
+                git:
+                    password:
+                    searchPaths: config-pro
+                    uri:  https://github.com/tiandaguang/cloudConfig
+                    username:

@@ -1,0 +1,17 @@
+server:
+    port: 9500
+spring:
+    application:
+        name: config-client
+    cloud:
+        config:
+         # 直接指向配置中心服务端 uri: http://localhost:9400
+          discovery:
+            enabled: true
+            service-id: config-server
+          #是否快速失败
+          fail-fast: true
+    profiles:
+        active: dev
+
+
