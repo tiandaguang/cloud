@@ -10,4 +10,7 @@ my:
 spring:
   zipkin:
     base-url: http://localhost:9411
-
+  boot:
+    admin:
+      client:
+        url: http://localhost:9600
