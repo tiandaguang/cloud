@@ -27,6 +27,7 @@
         <module>admin-server</module>
         <module>security-celint</module>
         <module>auth-server</module>
+        <module>auth-server2</module>
     </modules>
 
     <properties>
