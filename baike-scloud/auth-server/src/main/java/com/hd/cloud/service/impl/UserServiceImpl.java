@@ -14,8 +14,8 @@ public class UserServiceImpl implements UserService {
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         /*模拟数据库操作*/
         User user = new User();
-        user.setUsername("client");
-        user.setPassword("sparklr");
+        user.setUsername("10086");
+        user.setPassword("123456");
         return new CustomUserDetails(user);
     }
 

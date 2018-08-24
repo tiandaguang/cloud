@@ -4,6 +4,7 @@ import com.hd.cloud.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
@@ -25,7 +26,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
     @Autowired
     private DataSource dataSource;
 
-    @Bean// 声明TokenStore实现
+    @Bean // 声明TokenStore实现
     public TokenStore tokenStore() {
         return new JdbcTokenStore(dataSource);
     }
@@ -47,37 +48,34 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
     @Autowired
     private ClientDetailsService clientDetails;
 
-//    @Override
-//    public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-//        clients.inMemory() // 使用in-memory存储
-//                .withClient("client") // client_id
-//                .secret("secret") // client_secret
-//                .authorizedGrantTypes("authorization_code") // 该client允许的授权类型
-//                .scopes("app"); // 允许的授权范围
-//    }
+    @Override
+    public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+        clients.jdbc(dataSource);
+    }
 
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
         endpoints.authenticationManager(authenticationManager);
         endpoints.tokenStore(tokenStore());
-
-        // 配置TokenServices参数
+        endpoints.userDetailsService(userService);
+        endpoints.setClientDetailsService(clientDetails);
+        //配置TokenServices参数
         DefaultTokenServices tokenServices = new DefaultTokenServices();
         tokenServices.setTokenStore(endpoints.getTokenStore());
-        tokenServices.setSupportRefreshToken(false);
+        tokenServices.setSupportRefreshToken(true);
         tokenServices.setClientDetailsService(endpoints.getClientDetailsService());
         tokenServices.setTokenEnhancer(endpoints.getTokenEnhancer());
-        tokenServices.setAccessTokenValiditySeconds( (int) TimeUnit.DAYS.toSeconds(30)); // 30天
+        tokenServices.setAccessTokenValiditySeconds((int) TimeUnit.DAYS.toSeconds(1)); // 1天
         endpoints.tokenServices(tokenServices);
     }
 
-//    @Bean
-//    @Primary
-//    public DefaultTokenServices tokenServices() {
-//        DefaultTokenServices tokenServices = new DefaultTokenServices();
-//        tokenServices.setSupportRefreshToken(true);
-//        tokenServices.setTokenStore(tokenStore);
-//        return tokenServices;
-//    }
-
+    @Bean
+    @Primary
+    public DefaultTokenServices tokenServices() {
+        DefaultTokenServices tokenServices = new DefaultTokenServices();
+        tokenServices.setSupportRefreshToken(true);
+        tokenServices.setTokenStore(tokenStore);
+        return tokenServices;
+    }
 }
+
