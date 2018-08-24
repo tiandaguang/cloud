@@ -1,0 +1,15 @@
+management:
+    metrics:
+        web:
+            server:
+                auto-time-requests: false
+spring:
+    datasource:
+        continueOnError: true
+        initialize: false
+        password: 123456
+        url: jdbc:mysql://127.0.0.1:3306/test
+        username: root
+zipkin:
+    storage:
+        type: mysql
