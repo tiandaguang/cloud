@@ -12,4 +12,10 @@ public class IndexController {
         return "Hello World";
     }
 
+    @GetMapping("/Haha")
+    private String haha() {
+        System.out.println("haha");
+        return "haha";
+    }
+
 }
