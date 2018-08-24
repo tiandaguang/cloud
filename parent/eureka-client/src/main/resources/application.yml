@@ -1,3 +1,23 @@
+---
 spring:
-    zipkin:
-      base-url: http://localhost:9411
+  profiles: peer1
+
+server:
+  port: 9101
+
+#admin监控
+management:
+    server:
+        port: 9111
+---
+spring:
+  profiles: peer2
+server:
+  port: 9001
+
+#admin监控
+management:
+    server:
+        port: 9011
+
+

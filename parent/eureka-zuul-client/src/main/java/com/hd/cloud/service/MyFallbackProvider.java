@@ -27,7 +27,7 @@ public class MyFallbackProvider implements FallbackProvider {
      */
     @Override
     public String getRoute() {
-        return "*";
+        return "eureka-ribbon-client";
     }
 
     @Override
