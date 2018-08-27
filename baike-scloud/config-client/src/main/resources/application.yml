@@ -23,9 +23,16 @@ spring:
 #服务追踪
     zipkin:
       base-url: http://localhost:9411
-#运行状态监控
+#运行状态监控` 如果没有此配置项目 Admin中不会显示  至少需要声明端口
 management:
     endpoints:
         web:
             exposure:
-                include: bus-refresh
+                include:  '*'
+    endpoint:
+        health:
+            show-details: always
+    server:
+      port: 9530
+
+
