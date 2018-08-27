@@ -6,13 +6,13 @@
 通过向注册中心进行注册可以确保高可用
 
 
-如果
+如果放行全部api
 management:
     endpoints:
         web:
             exposure:
                 include:  '*'
-
+一定要注意不要少了 ''
 
 那么 http://localhost:9530/actuator/bus-refresh
     端口就是management的端口不再是服务的端口,否则会提示management
