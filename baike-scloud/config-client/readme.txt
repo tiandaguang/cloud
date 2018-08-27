@@ -16,3 +16,11 @@ management:
 
 那么 http://localhost:9530/actuator/bus-refresh
     端口就是management的端口不再是服务的端口,否则会提示management
+
+
+如果management:
+      endpoints:
+          web:
+              exposure:
+                  include:  bus-refresh
+ 那么Admin中的 节点一直是down状态 ,应该是需要开放 health接口
