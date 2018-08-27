@@ -12,7 +12,7 @@
 
     <parent>
         <groupId>com.hd.cloud</groupId>
-        <artifactId>parent</artifactId>
+        <artifactId>baike-scloud</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
