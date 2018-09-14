@@ -1,5 +1,5 @@
 server:
-  port: 9810
+  port: 9700
 
 spring:
   application:
@@ -25,4 +25,4 @@ management:
       exposure:
         include: '*'
   server:
-    port: 9811
+    port: 9710
