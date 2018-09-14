@@ -8,15 +8,14 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 
 @SpringBootApplication
 @EnableAuthorizationServer
-public class AuthServerApplication {
+public class AuthServerRedisApplication {
 
     @Bean
     public static NoOpPasswordEncoder passwordEncoder() {
         return (NoOpPasswordEncoder) NoOpPasswordEncoder.getInstance();
     }
 
-
     public static void main(String[] args) {
-        SpringApplication.run(AuthServerApplication.class, args);
+        SpringApplication.run(AuthServerRedisApplication.class, args);
     }
 }
