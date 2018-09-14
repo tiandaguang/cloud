@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.hd.cloud</groupId>
-    <artifactId>auth-server</artifactId>
+    <artifactId>auth-server-redis</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>auth-server</name>
+    <name>auth-server-redis</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
@@ -45,7 +45,6 @@
             <artifactId>spring-security-oauth2</artifactId>
             <version>2.3.3.RELEASE</version>
         </dependency>
-        <!-- 将token存储在redis中 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
