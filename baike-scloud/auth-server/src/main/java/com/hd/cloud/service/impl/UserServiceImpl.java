@@ -12,6 +12,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
+        System.out.println("loadUserByUsername+++++s"+s);
         /*模拟数据库操作*/
         User user = new User();
         user.setUsername("10086");

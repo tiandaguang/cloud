@@ -19,8 +19,8 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
          * 放行的方法
          */
         http.authorizeRequests().
-                antMatchers("/", "/Haha").permitAll()
-                .antMatchers("/**").authenticated()
+                antMatchers("/", "/Haha","/actuator","/actuator/*").permitAll()
+                .antMatchers("/*").authenticated()
                 .anyRequest().authenticated().and()
                 .csrf().disable();
     }
