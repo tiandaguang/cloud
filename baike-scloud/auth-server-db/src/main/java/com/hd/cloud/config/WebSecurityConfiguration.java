@@ -47,12 +47,13 @@ public class WebSecurityConfiguration extends GlobalAuthenticationConfigurerAdap
          *
          * @param http
          * @throws Exception
-
-         @Override protected void configure(HttpSecurity http) throws Exception {
-         http.requestMatchers().antMatchers(HttpMethod.OPTIONS, "/oauth/token", "/rest/**", "/api/**", "/**")
-         .and()
-         .csrf().disable();
-         }
          */
+        @Override
+        protected void configure(HttpSecurity http) throws Exception {
+            http.requestMatchers().antMatchers(HttpMethod.OPTIONS, "/oauth/token", "/rest/**", "/api/**", "/**")
+                    .and()
+                    .csrf().disable();
+        }
+
     }
 }

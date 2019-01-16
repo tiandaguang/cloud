@@ -29,6 +29,6 @@ public class Mymd5 {
     }
 
     public static void main(String[] args) {
-        System.out.println(Mymd5.getMD5("a1b2c3ipad12345"));
+        System.out.println(Mymd5.getMD5("123456a2d2"));
     }
 }
