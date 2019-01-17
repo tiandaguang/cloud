@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.hd.cloud</groupId>
-    <artifactId>eureka-client</artifactId>
+    <artifactId>eureka-stream-kafka-pro</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>eureka-client</name>
+    <name>eureka-stream-kafka-pro</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>

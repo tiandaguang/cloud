@@ -28,6 +28,8 @@
         <module>security-celint</module>
         <module>auth-server-db</module>
         <module>auth-server-redis</module>
+        <module>eureka-stream-kafka-consumer</module>
+        <module>eureka-stream-kafka-pro</module>
     </modules>
 
     <properties>
@@ -66,9 +68,9 @@
             <scope>compile</scope>
         </dependency>
         <!--<dependency>-->
-            <!--<groupId>com.cml.springcloud</groupId>-->
-            <!--<artifactId>cloud-common</artifactId>-->
-            <!--<version>1.0</version>-->
+        <!--<groupId>com.cml.springcloud</groupId>-->
+        <!--<artifactId>cloud-common</artifactId>-->
+        <!--<version>1.0</version>-->
         <!--</dependency>-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
